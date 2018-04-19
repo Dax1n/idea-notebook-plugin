@@ -1,0 +1,51 @@
+环境构建：
+需要将dom4j-1.6.1.jar存储到IntelliJ IDEA 2016.3\lib下面
+插件构建：
+build-> prepare plugin module ...
+插件菜单位置：
+Window下面 -> CodeNoteBook
+
+
+//    @Override
+//    public void actionPerformed(AnActionEvent e) {
+//        Project project = e.getData(PlatformDataKeys.PROJECT);
+//        Editor editor = e.getData(PlatformDataKeys.EDITOR);// 没有编辑区则为null
+//        PsiFile currentEditorFile = PsiUtilBase.getPsiFileInEditor(editor, project);
+//        String currentEditorFileName = currentEditorFile.getName();
+//        String text = currentEditorFile.getTextOffset() + "  " + currentEditorFileName + "  " + editor.getLineHeight();
+//        //editor.getSelectionModel().getSelectedText()//选择的文件内容
+//        System.out.println(project.getBasePath());
+//
+//
+//        //editor.getSelectionModel().getSelectionEndPosition()// 选择所在的行数，0开始计数
+////        PsiFile[] vf = PsiShortNamesCache.getInstance(project).getFilesByName("fileName");
+////        OpenFileDescriptor of = new OpenFileDescriptor(project, vf[0].getVirtualFile());
+////https://my.oschina.net/u/2526698/blog/1548929
+//
+//        Application application = ApplicationManager.getApplication();
+//        NoteComponent component = application.getComponent(NoteComponent.class);
+//        component.codeNoteBook(text);
+//    }
+
+//    //打开xml文件
+//    OpenFileDescriptor openFileDescriptor = new OpenFileDescriptor(project, mapperFile);
+//    Editor editor = FileEditorManager.getInstance(project).openTextEditor(openFileDescriptor, true);
+//
+//    //获取sql所在的行数，这里用了比较笨的方法。api找了很久没找到有什么方法可以获取行号，希望有大神指点
+//    String[] split = xml.split("\n");
+//    int lineNumber = 0;
+//    for (int i = 0; i < split.length; i++) {
+//        String line = split[i];
+//        if (StringUtil.isNotEmpty(line) && line.contains(methodName)) {
+//        lineNumber = i;
+//        break;
+//        }
+//        }
+//        //定位到对应的sql
+//        CaretModel caretModel = editor.getCaretModel();
+//        LogicalPosition logicalPosition = caretModel.getLogicalPosition();
+//        logicalPosition.leanForward(true);
+//        LogicalPosition logical = new LogicalPosition(lineNumber, logicalPosition.column);
+//        caretModel.moveToLogicalPosition(logical);
+//        SelectionModel selectionModel = editor.getSelectionModel();
+//        selectionModel.selectLineAtCaret();
